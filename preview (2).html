@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker Modal - Responsive</title>
+    <style>
+        /* Hacking Look and Feel */
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #000;
+            color: #00FF00;
+            margin: 0;
+            padding: 0;
+        }
+
+        #hackerModalExternal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 999999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        #hackerModalExternal .hacker-modal {
+            max-width: 900px;
+            width: 100%;
+            background: linear-gradient(145deg, #020402, #071507);
+            border: 1px solid #00ff66;
+            box-shadow: 0 0 25px rgba(0, 255, 102, 0.45);
+            border-radius: 16px;
+            padding: 32px;
+            color: #b8ffcc;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        #hackerModalExternal .glitch-title {
+            font-size: 34px;
+            font-weight: bold;
+            color: #00ff66;
+            text-shadow: 0 0 12px #00ff66;
+            margin-bottom: 25px;
+            animation: hackerFlicker 1.4s infinite;
+        }
+
+        #hackerModalExternal .terminal-box {
+            background: rgba(0, 0, 0, 0.55);
+            border-left: 4px solid #00ff66;
+            padding: 22px;
+            border-radius: 10px;
+            line-height: 1.8;
+            font-size: 18px;
+        }
+
+        #hackerModalExternal .telegram-box {
+            margin-top: 18px;
+            padding: 14px;
+            background: #001f0d;
+            border: 1px dashed #00ff66;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        #hackerModalExternal .telegram-box span {
+            color: #00ff66;
+            font-weight: bold;
+            text-shadow: 0 0 8px #00ff66;
+        }
+
+        #hackerModalExternal .hack-images {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-top: 24px;
+        }
+
+        #hackerModalExternal .hack-images img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid #00ff66;
+            filter: grayscale(100%) contrast(1.25);
+            transition: 0.35s ease;
+            cursor: zoom-in;
+        }
+
+        #hackerModalExternal .hack-images img:hover {
+            transform: scale(1.18);
+            filter: grayscale(0%) contrast(1.35);
+            box-shadow: 0 0 22px rgba(0, 255, 102, 0.7);
+        }
+
+        #hackerModalExternal .understand-btn {
+            margin-top: 26px;
+            padding: 15px 20px;
+            background: #00ff66;
+            color: #001b0a;
+            border: 0;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 0 16px rgba(0, 255, 102, 0.55);
+            transition: 0.25s ease;
+        }
+
+        #hackerModalExternal .understand-btn:hover {
+            background: #8dffb3;
+            transform: translateY(-2px);
+        }
+
+        @keyframes hackerFlicker {
+            0%, 100% { opacity: 1; }
+            45% { opacity: 0.75; }
+            50% { opacity: 1; }
+            55% { opacity: 0.55; }
+            60% { opacity: 1; }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            #hackerModalExternal .hacker-modal {
+                padding: 24px 18px;
+            }
+
+            #hackerModalExternal .glitch-title {
+                font-size: 24px;
+            }
+
+            #hackerModalExternal .terminal-box {
+                font-size: 16px;
+            }
+
+            #hackerModalExternal .hack-images {
+                grid-template-columns: 1fr;
+            }
+
+            #hackerModalExternal .hack-images img {
+                height: 180px;
+            }
+
+            #hackerModalExternal .hack-images img:hover {
+                transform: scale(1.05);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    window.HackerModalSettings = {
+        telegram: "@dev_script_writer", // Customize your Telegram username
+        images: [
+            "https://yourdomain.com/image1.jpg",  // Update the image URLs
+            "https://yourdomain.com/image2.jpg",
+            "https://yourdomain.com/image3.jpg"
+        ]
+    };
+
+    function createModal() {
+        if (document.getElementById("hackerModalExternal")) return;
+
+        const modal = document.createElement("div");
+        modal.id = "hackerModalExternal";
+
+        modal.innerHTML = `
+            <div class="hacker-modal">
+                <button class="hacker-close" type="button">×</button>
+                <div class="glitch-title">
+                    ⚠ SYSTEM BREACHED ⚠
+                </div>
+                <div class="terminal-box">
+                    <p>তোমার এই সাইটটি বিদেশি হ্যাকাররা হ্যাক করেছে।</p>
+                    <p>স্ক্রিনশটে তাদের হ্যাঁস করা কোড দেয়া।</p>
+                    <p>তোমার সাইটের সিকিউরিটি খুবই বাজে। একজন বুদ্ধিমান বাচ্চাও এটি হ্যাক করতে পারবে। যেমন আমি করেছি।</p>
+                    <p>তুমি যদি কোনো ভালো ডেভেলপার দিয়ে নিজের সাইটের সিকিউরিটি বাড়াতে চাও, আমি একজনকে রেফার করতে পারি।</p>
+                    <p>তাকে এই টেলিগ্রামে নক করতে পারো:</p>
+
+                    <div class="telegram-box">
+                        টেলিগ্রাম: <span>${window.HackerModalSettings.telegram}</span>
+                    </div>
+                </div>
+                <div class="hack-images">
+                    ${window.HackerModalSettings.images
+                    .slice(0, 3)
+                    .map(function (img, index) {
+                        return `<img src="${img}" alt="Hack Image ${index + 1}">`;
+                    })
+                    .join("")}
+                </div>
+                <button class="understand-btn" type="button">
+                    আমি বুঝেছি
+                </button>
+            </div>
+        `;
+
+        document.body.appendChild(modal);
+
+        modal.querySelector(".hacker-close").addEventListener("click", closeModalFor24Hours);
+        modal.querySelector(".understand-btn").addEventListener("click", closeModalFor24Hours);
+
+        modal.style.display = "flex";
+    }
+
+    function closeModalFor24Hours() {
+        const modal = document.getElementById("hackerModalExternal");
+        if (modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", createModal);
+    } else {
+        createModal();
+    }
+</script>
+
+</body>
+</html>
